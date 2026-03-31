@@ -3,6 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
+import myone from "../../../public/images/myone.png";
+import note from "../../../public/images/notes.png";
+import wed from "../../../public/images/wedding.png";
+import other from "../../../public/images/others.png";
 
 export function Projects() {
   const ref = useRef(null);
@@ -10,28 +14,46 @@ export function Projects() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Myone - Study app",
+      description: "A social-driven study platform featuring user-contributed academic resources, interactive community engagement with likes and comments, and real-time collaborative chatting",
+      tags: ["React Native", "Express.js", "MongoDB", "AWS"],
       gradient: "from-primary/20 to-accent/20",
+      image: myone,
+      code_link: ["https://github.com/Shayazath/myone-rebuild"],
+      live_url: []
+
     },
     {
-      title: "Task Management App",
+      title: "Notes app",
       description: "Collaborative task management tool with real-time updates, team features, and advanced filtering.",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "WebSocket"],
+      tags: ["Django", "Django HTML", "MySQL", "AWS"],
       gradient: "from-accent/20 to-primary/20",
+      code_link: ["https://github.com/Shayazath/notes_app"],
+      image: note,
+      live_url: []
+
     },
     {
-      title: "Social Media Dashboard",
+      title: "Wedding website",
       description: "Analytics dashboard for social media metrics with data visualization and automated reporting.",
-      tags: ["React", "D3.js", "Express", "Redis"],
+      tags: ["React", "Vite", "Emailjs", "Vercel"],
       gradient: "from-primary/20 to-accent/20",
+      image: wed,
+      code_link: ["https://github.com/Shayazath/wedding"],
+      live_url: ["https://wedding-rahman-karishma.vercel.app/"]
+
+
     },
     {
-      title: "AI Content Generator",
+      title: "Boredom stuffs",
       description: "AI-powered content creation tool with natural language processing and customizable templates.",
       tags: ["Python", "React", "OpenAI", "FastAPI"],
       gradient: "from-accent/20 to-primary/20",
+      code_link: ["https://github.com/Shayazath/Wanna-be-mine-", "https://github.com/Shayazath/wedding"],
+      image: other,
+      live_url: ["https://shayazath.github.io/Wanna-be-mine-/","https://shayazath.github.io/Know-SHAYAZ"]
+
+
     },
   ];
 
@@ -39,7 +61,7 @@ export function Projects() {
     <section ref={ref} className="py-24 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-      
+
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -66,7 +88,7 @@ export function Projects() {
               <div className="relative overflow-hidden rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
                 {/* Animated gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                
+
                 <div className="relative p-6">
                   {/* Project icon/image placeholder */}
                   <motion.div
@@ -74,17 +96,13 @@ export function Projects() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <motion.div
-                      className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent opacity-30 blur-2xl"
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 180, 360],
-                      }}
-                      transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
+                    <motion.img
+                      src={project.image.src}
+                      alt="myone"
+                      className="w-full h-auto rounded-2xl object-contain"
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1, delay: 0.5 }}
                     />
                   </motion.div>
 
@@ -109,22 +127,33 @@ export function Projects() {
 
                   {/* Links */}
                   <div className="flex gap-4">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
-                    >
-                      <Github className="w-5 h-5" />
-                      <span>Code</span>
-                    </motion.button>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                      <span>Live Demo</span>
-                    </motion.button>
+                    {project.code_link.map((link) => (
+                      <motion.a
+                        href={link} target="_blank"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
+                      >
+                        <Github className="w-5 h-5" />
+                        <span>Code</span>
+                      </motion.a>
+
+                    ))}
+
+                    {project.live_url && project.live_url.map((url, index) => (
+                      <motion.a
+                        key={index}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        <span>Live Demo</span>
+                      </motion.a>
+                    ))}
                   </div>
                 </div>
 

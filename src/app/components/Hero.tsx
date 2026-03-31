@@ -6,6 +6,17 @@ import heroImage from "../../../public/images/shayaz.png";
 
 
 export function Hero() {
+
+    const handleNavClick = (item: string) => {
+    const id = item.toLowerCase();
+    const element = document.getElementById(id);
+    if (element) {
+      // Small delay to let mobile menu close first
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
@@ -84,6 +95,7 @@ export function Hero() {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <motion.button
+              onClick={()=>handleNavClick("projects")}
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -91,6 +103,8 @@ export function Hero() {
                 View My Work
               </motion.button>
               <motion.button
+              onClick={()=>handleNavClick("contact")}
+
                 className="px-8 py-3 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
