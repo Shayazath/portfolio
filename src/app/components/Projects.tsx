@@ -46,7 +46,7 @@ export function Projects() {
     },
     {
       title: "Boredom stuffs",
-      description: "Stuffs I did when I get bored of coding",
+      description: "Stuffs I did when I get bored of coding with a cold cup of coffee and hearing 90s music, still doesn't give up on coding and will never.",
       tags: ["Java Script", "React", "CSS", "HTML"],
       gradient: "from-accent/20 to-primary/20",
       code_link: ["https://github.com/Shayazath/Wanna-be-mine-", "https://github.com/Shayazath/wedding"],
