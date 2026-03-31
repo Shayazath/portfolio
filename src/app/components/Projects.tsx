@@ -25,7 +25,7 @@ export function Projects() {
     },
     {
       title: "Notes app",
-      description: "Collaborative task management tool with real-time updates, team features, and advanced filtering.",
+      description: "A lightweight personal productivity hub for quick-capture notes and task organization, powered by a Django and MySQL backend with reliable AWS hosting for private, cross-device access.",
       tags: ["Django", "Django HTML", "MySQL", "AWS"],
       gradient: "from-accent/20 to-primary/20",
       code_link: ["https://github.com/Shayazath/notes_app"],
@@ -35,7 +35,7 @@ export function Projects() {
     },
     {
       title: "Wedding website",
-      description: "Analytics dashboard for social media metrics with data visualization and automated reporting.",
+      description: "A modern, high-performance wedding portal built with Vite and React, featuring elegant UI components to showcase event timelines, RSVP management, and the couple's journey.",
       tags: ["React", "Vite", "Emailjs", "Vercel"],
       gradient: "from-primary/20 to-accent/20",
       image: wed,
@@ -46,8 +46,8 @@ export function Projects() {
     },
     {
       title: "Boredom stuffs",
-      description: "AI-powered content creation tool with natural language processing and customizable templates.",
-      tags: ["Python", "React", "OpenAI", "FastAPI"],
+      description: "Stuffs I did when I get bored of coding",
+      tags: ["Java Script", "React", "CSS", "HTML"],
       gradient: "from-accent/20 to-primary/20",
       code_link: ["https://github.com/Shayazath/Wanna-be-mine-", "https://github.com/Shayazath/wedding"],
       image: other,
