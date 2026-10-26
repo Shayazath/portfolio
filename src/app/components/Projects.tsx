@@ -7,7 +7,7 @@ import myone from "../../../public/images/myone.png";
 import note from "../../../public/images/notes.png";
 import wed from "../../../public/images/wedding.png";
 import other from "../../../public/images/others.png";
-
+import aispeech from "../../../public/images/aispeech.png";
 export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -15,45 +15,73 @@ export function Projects() {
   const projects = [
     {
       title: "Myone - Study app",
-      description: "A social-driven study platform featuring user-contributed academic resources, interactive community engagement with likes and comments, and real-time collaborative chatting",
+      description:
+        "A social-driven study platform featuring user-contributed academic resources, interactive community engagement with likes and comments, and real-time collaborative chatting",
       tags: ["React Native", "Express.js", "MongoDB", "AWS"],
       gradient: "from-primary/20 to-accent/20",
       image: myone,
       code_link: ["https://github.com/Shayazath/myone-rebuild"],
-      live_url: []
-
+      live_url: [],
     },
     {
       title: "Notes app",
-      description: "A lightweight personal productivity hub for quick-capture notes and task organization, powered by a Django and MySQL backend with reliable AWS hosting for private, cross-device access.",
+      description:
+        "A lightweight personal productivity hub for quick-capture notes and task organization, powered by a Django and MySQL backend with reliable AWS hosting for private, cross-device access.",
       tags: ["Django", "Django HTML", "MySQL", "AWS"],
       gradient: "from-accent/20 to-primary/20",
       code_link: ["https://github.com/Shayazath/notes_app"],
       image: note,
-      live_url: []
-
+      live_url: [],
     },
     {
       title: "Wedding website",
-      description: "A modern, high-performance wedding portal built with Vite and React, featuring elegant UI components to showcase event timelines, RSVP management, and the couple's journey.",
+      description:
+        "A modern, high-performance wedding portal built with Vite and React, featuring elegant UI components to showcase event timelines, RSVP management, and the couple's journey.",
       tags: ["React", "Vite", "Emailjs", "Vercel"],
       gradient: "from-primary/20 to-accent/20",
       image: wed,
       code_link: ["https://github.com/Shayazath/wedding"],
-      live_url: ["https://wedding-rahman-karishma.vercel.app/"]
+      live_url: ["https://wedding-rahman-karishma.vercel.app/"],
+    },
 
-
+    {
+      title: "AI Speak to Text",
+      description:
+        "An AI-powered speech-to-text platform built with FastAPI and faster-whisper. Supports real-time microphone transcription",
+      tags: [
+        "Python",
+        "FastAPI",
+        "faster-whisper",
+        "Next.js",
+        "TypeScript",
+        "WebSockets",
+        "TiDB Cloud",
+        "Google Cloud Run",
+        "Vercel",
+      ],
+      gradient: "from-cyan-500/20 to-violet-500/20",
+      image: aispeech, // Replace with a dedicated AI Speak to Text screenshot
+      code_link: [
+        "https://github.com/Shayazath/ai-speak-to-text-frontend",
+        "https://github.com/Shayazath/ai-speak-to-text-backend",
+      ],
+      live_url: ["https://ai-speak-to-text-frontend.vercel.app/"],
     },
     {
       title: "Boredom stuffs",
-      description: "Built out of moments of boredom, these projects came to life with a cold cup of coffee sitting beside me and 90s music playing in the background.",
+      description:
+        "Built out of moments of boredom, these projects came to life with a cold cup of coffee sitting beside me and 90s music playing in the background.",
       tags: ["Java Script", "React", "CSS", "HTML"],
       gradient: "from-accent/20 to-primary/20",
-      code_link: ["https://github.com/Shayazath/Wanna-be-mine-", "https://github.com/Shayazath/wedding"],
+      code_link: [
+        "https://github.com/Shayazath/Wanna-be-mine-",
+        "https://github.com/Shayazath/wedding",
+      ],
       image: other,
-      live_url: ["https://shayazath.github.io/Wanna-be-mine-/","https://shayazath.github.io/Know-SHAYAZ"]
-
-
+      live_url: [
+        "https://shayazath.github.io/Wanna-be-mine-/",
+        "https://shayazath.github.io/Know-SHAYAZ",
+      ],
     },
   ];
 
@@ -87,7 +115,9 @@ export function Projects() {
             >
               <div className="relative overflow-hidden rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
                 {/* Animated gradient background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                />
 
                 <div className="relative p-6">
                   {/* Project icon/image placeholder */}
@@ -129,7 +159,8 @@ export function Projects() {
                   <div className="flex gap-4">
                     {project.code_link.map((link) => (
                       <motion.a
-                        href={link} target="_blank"
+                        href={link}
+                        target="_blank"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
@@ -137,23 +168,23 @@ export function Projects() {
                         <Github className="w-5 h-5" />
                         <span>Code</span>
                       </motion.a>
-
                     ))}
 
-                    {project.live_url && project.live_url.map((url, index) => (
-                      <motion.a
-                        key={index}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                        <span>Live Demo</span>
-                      </motion.a>
-                    ))}
+                    {project.live_url &&
+                      project.live_url.map((url, index) => (
+                        <motion.a
+                          key={index}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-2 text-primary hover:text-accent transition-colors"
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                          <span>Live Demo</span>
+                        </motion.a>
+                      ))}
                   </div>
                 </div>
 
