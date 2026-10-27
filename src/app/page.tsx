@@ -6,6 +6,7 @@ import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Journey } from "./components/Journey";
+import { Testimonials } from "./components/Testimonials";
 
 export default function Page() {
   return (
@@ -27,6 +28,10 @@ export default function Page() {
         <div id="projects">
           <Projects />
         </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        
         <div id="contact">
           <Contact />
         </div>

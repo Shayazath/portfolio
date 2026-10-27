@@ -20,7 +20,7 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
-  const navItems = ["Home", "About", "Skills", "Journey", "Projects", "Contact"];
+  const navItems = ["Home", "About", "Skills", "Journey", "Projects","Testimonials", "Contact"];
 
   const handleNavClick = (item: string) => {
     setIsMobileMenuOpen(false);
