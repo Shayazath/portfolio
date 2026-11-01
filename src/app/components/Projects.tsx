@@ -8,11 +8,57 @@ import note from "../../../public/images/notes.png";
 import wed from "../../../public/images/wedding.png";
 import other from "../../../public/images/others.png";
 import aispeech from "../../../public/images/aispeech.png";
+import nexachain from "../../../public/images/nexachain.png";
 export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const projects = [
+    {
+      title: "Nexachain - Investment Platform",
+      description:
+        "A full-stack investment and referral-based platform featuring JWT authentication, investment management, automated daily ROI calculations, multi-level referral income distribution, wallet transactions, and an interactive investor dashboard.",
+      tags: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "JWT",
+        "Node-cron",
+        "Google Cloud Run",
+        "Vercel",
+      ],
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      image: nexachain,
+      code_link: [
+        "https://github.com/Shayazath/nexachain-frontend",
+        "https://github.com/Shayazath/nexachain-backend",
+      ],
+      live_url: ["https://nexachain-frontend-brown.vercel.app/"],
+    },
+    {
+      title: "AI Speak to Text",
+      description:
+        "An AI-powered speech-to-text platform built with FastAPI and Faster-Whisper. Supports real-time microphone transcription and audio file uploads. Detects English, Hindi, and mixed-language speech, with editable transcripts and history management.",
+      tags: [
+        "Python",
+        "FastAPI",
+        "faster-whisper",
+        "Next.js",
+        "TypeScript",
+        "WebSockets",
+        "TiDB Cloud",
+        "Google Cloud Run",
+        "Vercel",
+      ],
+      gradient: "from-cyan-500/20 to-violet-500/20",
+      image: aispeech, // Replace with a dedicated AI Speak to Text screenshot
+      code_link: [
+        "https://github.com/Shayazath/ai-speak-to-text-frontend",
+        "https://github.com/Shayazath/ai-speak-to-text-backend",
+      ],
+      live_url: ["https://ai-speak-to-text-frontend.vercel.app/"],
+    },
     {
       title: "Myone - Study app",
       description:
@@ -44,29 +90,6 @@ export function Projects() {
       live_url: ["https://wedding-rahman-karishma.vercel.app/"],
     },
 
-    {
-      title: "AI Speak to Text",
-      description:
-        "An AI-powered speech-to-text platform built with FastAPI and faster-whisper. Supports real-time microphone transcription",
-      tags: [
-        "Python",
-        "FastAPI",
-        "faster-whisper",
-        "Next.js",
-        "TypeScript",
-        "WebSockets",
-        "TiDB Cloud",
-        "Google Cloud Run",
-        "Vercel",
-      ],
-      gradient: "from-cyan-500/20 to-violet-500/20",
-      image: aispeech, // Replace with a dedicated AI Speak to Text screenshot
-      code_link: [
-        "https://github.com/Shayazath/ai-speak-to-text-frontend",
-        "https://github.com/Shayazath/ai-speak-to-text-backend",
-      ],
-      live_url: ["https://ai-speak-to-text-frontend.vercel.app/"],
-    },
     {
       title: "Boredom stuffs",
       description:
