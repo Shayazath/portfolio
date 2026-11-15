@@ -1,3 +1,4 @@
+"use client";
 import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -7,12 +8,17 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Journey } from "./components/Journey";
 import { Testimonials } from "./components/Testimonials";
+import { FallingLeaves } from "falling-leaves/react";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
       <Navigation />
       <main>
+        <FallingLeaves
+          fullScreen
+          shapes={["maple"]}
+        />
         <div id="home">
           <Hero />
         </div>
