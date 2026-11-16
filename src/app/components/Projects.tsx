@@ -88,7 +88,7 @@ export function Projects() {
         "https://github.com/Shayazath/Learnwise_frontend",
         "https://github.com/Shayazath/Learnwise_backend",
       ],
-      live_url: ["https://learnwise-frontend.vercel.app/"],
+      live_url: ["https://learnyah-frontend.vercel.app"],
     },
     {
       title: "Nexachain - Investment Platform",
