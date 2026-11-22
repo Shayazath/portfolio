@@ -8,19 +8,27 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-useEffect(() => {
-  // ✅ Set initial state on mount
-  setIsScrolled(window.scrollY > 10);
+  useEffect(() => {
+    // ✅ Set initial state on mount
+    setIsScrolled(window.scrollY > 1);
 
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 10);  // ✅ lower threshold
-  };
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 1); // ✅ lower threshold
+    };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const navItems = ["Home", "About", "Skills", "Journey", "Projects","Testimonials", "Contact"];
+  const navItems = [
+    "Home",
+    "About",
+    "Skills",
+    "Journey",
+    "Projects",
+    "Testimonials",
+    "Contact",
+  ];
 
   const handleNavClick = (item: string) => {
     setIsMobileMenuOpen(false);
@@ -48,12 +56,19 @@ useEffect(() => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
-            : "bg-background/40 backdrop-blur-md border-b border-border/30"  // ✅ always visible
-          }`}
+        className={`
+    fixed top-0 left-0 w-full max-w-[100vw] z-50
+    box-border
+    transition-all duration-300
+    ${
+      isScrolled
+        ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
+        : "bg-background/40 backdrop-blur-md border-b border-border/30"
+    }
+  `}
       >
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between box-border">
+          {" "}
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -63,7 +78,6 @@ useEffect(() => {
             <span className="text-primary">Port</span>
             <span>folio</span>
           </motion.div>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
@@ -90,14 +104,17 @@ useEffect(() => {
               Resume
             </motion.a>
           </div>
-
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-foreground z-50 relative"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </motion.button>
         </div>
 
